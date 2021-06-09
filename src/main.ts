@@ -3,12 +3,16 @@ import * as kc from 'cdk-keycloak';
 
 
 export class Demo extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string, props: kc.KeyCloakProps ) {
+  constructor(scope: cdk.Construct, id: string ) {
     super(scope, id);
 
+    const certificateArn = this.node.tryGetContext('ACM_CERT_ARN') || process.env.ACM_CERT_ARN;
+    if (certificateArn == '') {
+      throw new Error('ERROR - ACM_CERT_ARN not found');
+    }
     new kc.KeyCloak(this, 'KeyCloak', {
       auroraServerless: true,
-      ...props,
+      certificateArn,
     });
   }
 }
@@ -22,12 +26,7 @@ const app = new cdk.App();
 
 const stack = new cdk.Stack(app, 'my-stack-dev', { env: devEnv });
 
-const certificateArn = stack.node.tryGetContext('ACM_CERT_ARN');
-if (certificateArn == undefined ) {
-  throw new Error('ERROR - ACM_CERT_ARN not found');
-}
-new Demo(stack, 'Demo', {
-  certificateArn,
-});
+
+new Demo(stack, 'Demo');
 
 app.synth();
