@@ -1,5 +1,5 @@
 
-## KeyCloak on AWS QuickStart
+## KeyCloak on AWS Quick Start
 
 This is a qiuck start project for the reference architecture that leverages [cdk-keycloak](https://github.com/aws-samples/cdk-keycloak) AWS CDK construct library to help you build and deploy [KeyCloak](https://www.keycloak.org/) on AWS.
 
@@ -13,20 +13,20 @@ This is a qiuck start project for the reference architecture that leverages [cdk
 To deploy it with CDK in a new VPC
 
 ```sh
-cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN>
+npx cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN>
 ```
 
 To deploy in the default VPC:
 
 ```sh
-cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN> \
+npx cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN> \
 -c use_default_vpc=1
 ```
 
 To deploy in any existing VPC:
 
 ```sh
-cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN> \
+npx cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN> \
 -c use_vpc_id=vpc-xxxxxx
 ```
 

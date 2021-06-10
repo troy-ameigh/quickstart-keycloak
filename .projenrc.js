@@ -10,6 +10,11 @@ const project = new AwsCdkTypeScriptApp({
   authorName: 'Pahud Hsieh',
   authorEmail: 'hunhsieh@amazon.com',
   deps: ['cdk-keycloak'],
+  jestOptions: {
+    jestConfig: {
+      setupFilesAfterEnv: ['./test/jest.setup.js'],
+    },
+  },
 });
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'images', 'yarn-error.log', 'dependabot.yml'];

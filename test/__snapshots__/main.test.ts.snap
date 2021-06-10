@@ -263,7 +263,9 @@ Object {
     "DemoKeyCloakKeyCloakContainerSerivceALBHttpsListenerA7977DD5": Object {
       "Properties": Object {
         "Certificates": Array [
-          Object {},
+          Object {
+            "CertificateArn": "mock",
+          },
         ],
         "DefaultActions": Array [
           Object {
