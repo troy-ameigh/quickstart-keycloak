@@ -1,5 +1,6 @@
 {
   "name": "quickstart-keycloak",
+  "description": "The quick start for KeyCloak on AWS",
   "scripts": {
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
@@ -18,6 +19,11 @@
     "diff": "npx projen diff",
     "projen": "npx projen",
     "start": "npx projen start"
+  },
+  "author": {
+    "name": "Pahud Hsieh",
+    "email": "hunhsieh@amazon.com",
+    "organization": false
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
