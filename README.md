@@ -1,5 +1,5 @@
 
-## KeyCloak on AWS QuickStart
+## KeyCloak on AWS Quick Start
 
 This is a qiuck start project for the reference architecture that leverages [cdk-keycloak](https://github.com/aws-samples/cdk-keycloak) AWS CDK construct library to help you build and deploy [KeyCloak](https://www.keycloak.org/) on AWS.
 
