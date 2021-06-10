@@ -6,8 +6,8 @@ export class Demo extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string ) {
     super(scope, id);
 
-    const certificateArn = this.node.tryGetContext('ACM_CERT_ARN') || process.env.ACM_CERT_ARN;
-    if (certificateArn == '') {
+    const certificateArn = this.node.tryGetContext('ACM_CERT_ARN') ?? process.env.ACM_CERT_ARN;
+    if (!certificateArn) {
       throw new Error('ERROR - ACM_CERT_ARN not found');
     }
     new kc.KeyCloak(this, 'KeyCloak', {
