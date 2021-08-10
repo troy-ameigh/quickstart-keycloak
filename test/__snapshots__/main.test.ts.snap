@@ -4,14 +4,6 @@ exports[`Snapshot 1`] = `
 Object {
   "Description": "(SO8021) - Deploy keycloak on AWS with cdk-keycloak construct library",
   "Mappings": Object {
-    "DemoKeyCloakKeyCloakContainerSerivceBootstrapImageMapC4BA0B7B": Object {
-      "aws": Object {
-        "uri": "public.ecr.aws/ubuntu/mysql:latest",
-      },
-      "aws-cn": Object {
-        "uri": "048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/mysql:latest",
-      },
-    },
     "DemoKeyCloakKeyCloakContainerSerivceKeycloakImageMap80969273": Object {
       "aws": Object {
         "uri": "jboss/keycloak:12.0.4",
@@ -66,6 +58,7 @@ Object {
         "DBSubnetGroupName": Object {
           "Ref": "DemoKeyCloakDatabaseAuroraServerlessClusterSubnetsB194D566",
         },
+        "DatabaseName": "keycloak",
         "Engine": "aurora-mysql",
         "EngineMode": "serverless",
         "MasterUserPassword": Object {
@@ -540,77 +533,6 @@ Object {
       "Properties": Object {
         "ContainerDefinitions": Array [
           Object {
-            "Command": Array [
-              "sh",
-              "-c",
-              "mysql -u$DB_USER -p$DB_PASSWORD -h$DB_ADDR -e \\"CREATE DATABASE IF NOT EXISTS $DB_NAME\\"",
-            ],
-            "Environment": Array [
-              Object {
-                "Name": "DB_NAME",
-                "Value": "keycloak",
-              },
-              Object {
-                "Name": "DB_USER",
-                "Value": "admin",
-              },
-              Object {
-                "Name": "DB_ADDR",
-                "Value": Object {
-                  "Fn::GetAtt": Array [
-                    "DemoKeyCloakDatabaseAuroraServerlessClusterF717CC02",
-                    "Endpoint.Address",
-                  ],
-                },
-              },
-            ],
-            "Essential": false,
-            "Image": Object {
-              "Fn::FindInMap": Array [
-                "DemoKeyCloakKeyCloakContainerSerivceBootstrapImageMapC4BA0B7B",
-                Object {
-                  "Ref": "AWS::Partition",
-                },
-                "uri",
-              ],
-            },
-            "LogConfiguration": Object {
-              "LogDriver": "awslogs",
-              "Options": Object {
-                "awslogs-group": Object {
-                  "Ref": "DemoKeyCloakKeyCloakContainerSerivceLogGroup6C0FBE58",
-                },
-                "awslogs-region": Object {
-                  "Ref": "AWS::Region",
-                },
-                "awslogs-stream-prefix": "bootstrap",
-              },
-            },
-            "Name": "bootstrap",
-            "Secrets": Array [
-              Object {
-                "Name": "DB_PASSWORD",
-                "ValueFrom": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      Object {
-                        "Ref": "DemoKeyCloakDatabaseAuroraServerlessClusterSecretAttachment74515EDB",
-                      },
-                      ":password::",
-                    ],
-                  ],
-                },
-              },
-            ],
-          },
-          Object {
-            "DependsOn": Array [
-              Object {
-                "Condition": "SUCCESS",
-                "ContainerName": "bootstrap",
-              },
-            ],
             "Environment": Array [
               Object {
                 "Name": "DB_ADDR",
