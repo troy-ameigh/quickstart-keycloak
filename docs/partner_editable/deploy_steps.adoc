@@ -1,9 +1,9 @@
 // We need to work around Step numbers here if we are going to potentially exclude the AMI subscription
 === Planning the deployment
 
-This Quick Start requires a moderate to high-level understanding of how to manage {partner-product-short-name}. This deployment also requires a moderate understanding of the following: https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html[Service Quotas^], https://docs.aws.amazon.com/cdk/latest/guide/home.html[AWS Cloud Development Kit (AWS CDK)^], and https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html[AWS CloudFormation^].
+This Quick Start requires a moderate to high-level understanding of how to manage KeyCloak. This deployment also requires a moderate understanding of the following: https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html[Service Quotas^], https://docs.aws.amazon.com/cdk/latest/guide/home.html[AWS Cloud Development Kit (AWS CDK)^], and https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html[AWS CloudFormation^].
 
-The deployment process takes about {deployment_time} to complete, and the template launches in the {default_deployment_region} Region by default.
+The deployment process takes about 5 minutes to complete, and the template launches in the us-east-1 Region by default.
 
 === Launch the Quick Start
 To deploy this Quick Start, use AWS CDK. For more information, see https://docs.aws.amazon.com/cdk/latest/guide/work-with.html[Working with the AWS CDK^].
@@ -23,10 +23,10 @@ AWS CDK allows you to use familiar programming tools and syntax to define infras
 
   pip install -r requirements.txt
 
-. Deploy the resources defined in the {partner-product-short-name} stack:
+. Deploy the resources defined in the 'my-stack-dev' stack:
 
-  git clone {git_repo_url}
-  cd {quickstart-project-name}
+  git clone https://github.com/aws-quickstart/quickstart-keycloak.git
+  cd quickstart-keycloak
 
 . Edit the `cdk.json` file to reflect your specific environment.
 
@@ -36,4 +36,4 @@ AWS CDK allows you to use familiar programming tools and syntax to define infras
 
 . Deploy the CDK stack:
 
-  cdk deploy
+  cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN>

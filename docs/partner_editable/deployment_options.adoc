@@ -1,5 +1,15 @@
 //For CDK Deployments use the following. Modify based on what is being deployed.
 
-This Quick Start provides one deployment option:
+This Quick Start provides three deployment options:
 
-* *Deploy {partner-product-short-name}*. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys {partner-product-short-name} into this new VPC. This Quick Start uses CDK.
+* *Default deployment*. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys KeyCloak into this new VPC. This Quick Start uses CDK.
+
+cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN>
+
+* *Deploy in the default VPC*. This option allows you to deploy KeyCloak into your default VPC without creating a new one. Make sure the VPC spans across three availability zones with public subnets and private subnets.
+
+  cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN> -c use_default_vpc=1
+
+* *Deploy in any existing VPC*. This option allows you to deploy KeyCloak into any existing VPC without creating a new one. Make sure the VPC spans across three availability zones with public subnets and private subnets.
+
+  cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN> -c use_vpc_id=vpc-xxxxxx

@@ -1,4 +1,4 @@
-const { AwsCdkTypeScriptApp, DependenciesUpgradeMechanism } = require('projen');
+const { AwsCdkTypeScriptApp } = require('projen');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 

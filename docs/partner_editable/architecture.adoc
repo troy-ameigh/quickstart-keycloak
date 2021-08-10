@@ -1,29 +1,31 @@
 :xrefstyle: short
 
 Deploying this Quick Start for a new virtual private cloud (VPC) with
-default parameters builds the following {partner-product-short-name} environment in the
+default parameters builds the following **KeyCloak on AWS** environment in the
 AWS Cloud.
 
 // Replace this example diagram with your own. Follow our wiki guidelines: https://w.amazon.com/bin/view/AWS_Quick_Starts/Process_for_PSAs/#HPrepareyourarchitecturediagram. Upload your source PowerPoint file to the GitHub {deployment name}/docs/images/ directory in this repo. 
 
 [#architecture1]
-.Quick Start architecture for {partner-product-short-name} on AWS
-image::../images/architecture_diagram.png[Architecture]
+.Quick Start architecture for KeyCloak on AWS
+image::../images/architecture_diagram.svg[Architecture]
 
 As shown in <<architecture1>>, the Quick Start sets up the following:
 
-* A highly available architecture that spans two Availability Zones.*
+* A highly available architecture that spans three Availability Zones.*
 * A VPC configured with public and private subnets, according to AWS
 best practices, to provide you with your own virtual network on AWS.*
 * In the public subnets:
 ** Managed network address translation (NAT) gateways to allow outbound
 internet access for resources in the private subnets.*
-** A Linux bastion host in an Auto Scaling group to allow inbound Secure
-Shell (SSH) access to EC2 instances in public and private subnets.*
 * In the private subnets:
-** <item>.
-** <item>.
+** Amazon ECS tasks running with AWS Fargate behind the Application Load Balancer.
+** Amazon Aurora Serverless database cluster or Amazon RDS cluster.
 // Add bullet points for any additional components that are included in the deployment. Make sure that the additional components are also represented in the architecture diagram. End each bullet with a period.
-* <describe any additional components>.
+* AWS IAM role for Amazon ECS service 
+* Secrets from AWS Secrets Manager for KeyCloak console login and database connection.
+* Existing certificate from AWS Certificate Manager will be required for custom domain name on Application Load Balancer.
+* A Route53 alias record will be required for the custom domain name.
+
 
 [.small]#* The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.#
