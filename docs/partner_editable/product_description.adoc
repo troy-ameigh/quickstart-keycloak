@@ -2,4 +2,6 @@
 // Briefly describe the software. Use consistent and clear branding. 
 // Include the benefits of using the software on AWS, and provide details on usage scenarios.
 
-<Describe how the software works on AWS.>
+This Quik Start was built as an AWS CDK(Cloud Development Kit) application that allows users to deploy [KeyCloak](https://www.keycloak.org/) on AWS in TypeScript or Python. The service would be deployed and running on Amazon ECS with AWS Fargate, Amazon RDS or Aurora cluster with all credentials automatically generated and stored in the AWS Secrets Manager. 
+
+With this Quick Start, users have the freedom to customize their deployments with high level CDK construct properties or even integrate the construct as part of any existing CDK application.

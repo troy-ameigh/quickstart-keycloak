@@ -23,7 +23,7 @@ AWS CDK allows you to use familiar programming tools and syntax to define infras
 
   pip install -r requirements.txt
 
-. Deploy the resources defined in the {partner-product-short-name} stack:
+. Deploy the resources defined in the 'my-stack-dev' stack:
 
   git clone {git_repo_url}
   cd {quickstart-project-name}
@@ -36,4 +36,4 @@ AWS CDK allows you to use familiar programming tools and syntax to define infras
 
 . Deploy the CDK stack:
 
-  cdk deploy
+  cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN>
