@@ -35,7 +35,7 @@
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.24.2",
-    "jest": "^27.2.2",
+    "jest": "^27.2.3",
     "jest-junit": "^12",
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
@@ -47,7 +47,7 @@
   "dependencies": {
     "@aws-cdk/assert": "^1.121.0",
     "@aws-cdk/core": "^1.121.0",
-    "cdk-keycloak": "^0.2.30"
+    "cdk-keycloak": "^0.2.31"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
