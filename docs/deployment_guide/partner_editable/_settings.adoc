@@ -1,14 +1,14 @@
-:quickstart-project-name: quickstart-repo-name
+:quickstart-project-name: quickstart-keycloak
 :quickstart-github-org: aws-quickstart
-:partner-product-name: Full Product Name
-:partner-product-short-name: Product Name
-:partner-company-name: Example Company Name, Ltd.
-:doc-month: January
+:partner-product-name: FKeyCloak on AWS
+:partner-product-short-name: KeyCloak
+:partner-company-name: AWS Great China Region Solution Team
+:doc-month: March
 :doc-year: 2022
-:partner-contributors: John Smith, {partner-company-name}
-// :other-contributors: Akua Mansa, Trek10
-:aws-contributors: Janine Singh, AWS IoT Partner team
-:aws-ia-contributors: Toni Jones, AWS Integration & Automation team
-:deployment_time: 15 minutes
+//:partner-contributors: John Smith, {partner-company-name}
+//:other-contributors: Akua Mansa, Trek10
+:aws-contributors: Pahud Hsieh, AWS Great China Region Solution Team
+:aws-ia-contributors: Troy Ameigh, AWS Intergration and Automation Team
+:deployment_time: 5 minutes
 :default_deployment_region: us-east-1
 // :private_repo:

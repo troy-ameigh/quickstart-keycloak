@@ -1,3 +1,46 @@
 // Include any predeployment steps here, such as signing up for a Marketplace AMI or making any changes to a partner account. If there are no predeployment steps, leave this file empty.
 
+==== Prepare for the CDK deployment
+
+To deploy this stack, you must install Node.js, Python, and CDK.
+
+==== Setting your environment variables
+
+The CDK requires the `AWS_PROFILE` variable and `--profile` parameter.
+
+  export AWS_PROFILE=myProfile
+
 == Predeployment steps
+
+. Ensure that you have the AWS CDK toolkit installed:
+
+  npm install -g aws-cdk
+
+. Verify the installation and check the current version:
+
+  cdk --version
+
+=== Launch the Quick Start
+To deploy this Quick Start, use AWS CDK. For more information, see https://docs.aws.amazon.com/cdk/latest/guide/work-with.html[Working with the AWS CDK^].
+
+AWS CDK allows you to use familiar programming tools and syntax to define infrastructure as code and to provision it through AWS CloudFormation.
+
+//This step needed for Python
+. Install the application's dependencies:
+
+  pip install -r requirements.txt
+
+. Deploy the resources defined in the 'my-stack-dev' stack:
+
+  git clone {git_repo_url}
+  cd {quickstart-project-name}
+
+. Edit the `cdk.json` file to reflect your specific environment.
+
+. Deploy the AWS CDK Toolkit stack (for more information, see https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html[Bootstrapping^]):
+
+  cdk bootstrap
+
+. Deploy the CDK stack:
+
+  cdk deploy -c ACM_CERT_ARN=<YOUR_ACM_CERTIFICATE_ARN>
