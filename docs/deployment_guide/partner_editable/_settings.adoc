@@ -1,6 +1,6 @@
 :quickstart-project-name: quickstart-keycloak
 :quickstart-github-org: aws-quickstart
-:partner-product-name: FKeyCloak on AWS
+:partner-product-name: KeyCloak on AWS
 :partner-product-short-name: KeyCloak
 :partner-company-name: AWS Great China Region Solution Team
 :doc-month: March
@@ -8,7 +8,7 @@
 //:partner-contributors: John Smith, {partner-company-name}
 //:other-contributors: Akua Mansa, Trek10
 :aws-contributors: Pahud Hsieh, AWS Great China Region Solution Team
-:aws-ia-contributors: Troy Ameigh, AWS Intergration and Automation Team
+:aws-ia-contributors: Troy Ameigh, AWS Integration and Automation Team
 :deployment_time: 5 minutes
 :default_deployment_region: us-east-1
 // :private_repo:
