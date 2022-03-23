@@ -1,7 +1,5 @@
 // Add any unique troubleshooting steps here.
 
-== FAQ
-
 *Q.* I encountered a *ERROR - ACM_CERT_ARN not found* error when I launched the Quick Start.
 
 *A.* The AWS CDK deployment requires an existing certificate Amazon Resource Name (ARN) from AWS Certificate Manager to configure the Application Load Balancer. You must create the certificate first and then pass the certificate ARN as a AWS CDK context variable to the CDK command line interface (CLI).
