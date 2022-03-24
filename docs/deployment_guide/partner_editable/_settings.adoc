@@ -1,7 +1,7 @@
 :quickstart-project-name: quickstart-keycloak
 :quickstart-github-org: aws-quickstart
-:partner-product-name: KeyCloak on AWS
-:partner-product-short-name: KeyCloak
+:partner-product-name: Keycloak
+:partner-product-short-name: Keycloak
 :partner-company-name: AWS Great China Region Solution Team
 :doc-month: March
 :doc-year: 2022
