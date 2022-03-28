@@ -20,7 +20,7 @@ AWS CDK requires the `AWS_PROFILE` variable and `--profile` parameter:
 
   cdk --version
 
-=== Launch the Quick Start
+== Launch the Quick Start
 Use AWS CDK to deploy this Quick Start. For more information, refer to https://docs.aws.amazon.com/cdk/latest/guide/work-with.html[Working with the AWS CDK^].
 
 AWS CDK provides familiar programming tools and syntax to define infrastructure as code and to provision it through AWS CloudFormation.
