@@ -1,6 +1,6 @@
 // Include details about any licenses and how to sign up. Provide links as appropriate.
 No licenses are required to deploy this Quick Start. All AWS service resources consumed during the launch of the Quick Start incur AWS service usage costs.
 
-{partner-product-short-name} is distributed under Apache License 2.0. For more information, refer to the https://github.com/keycloak/keycloak/blob/master/LICENSE.txt[Apache license for {partner-product-short-name}].
+{partner-product-short-name} is distributed under Apache License 2.0. For more information, refer to https://github.com/keycloak/keycloak/blob/master/LICENSE.txt[Apache license for {partner-product-short-name}].
 
 There is no cost to use this Quick Start, but you will be billed for any AWS services or resources that this Quick Start deploys. For more information, refer to the https://fwd.aws/rA69w?[AWS Quick Start General Information Guide^].
