@@ -24,7 +24,7 @@ const devEnv = {
 
 const app = new cdk.App();
 
-const stack = new cdk.Stack(app, 'my-stack-dev', { env: devEnv });
+const stack = new cdk.Stack(app, 'my-stack-dev', { env: devEnv,  description: "(qs-1sqf96ugi)" });
 
 
 new Demo(stack, 'Demo');
