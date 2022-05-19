@@ -2172,9 +2172,9 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^3.3.69:
-  version "3.4.9"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.4.9.tgz#fa17fab34467aabb0745aac09e4fe40b04c0c30e"
-  integrity sha512-GzAAPEvTIQS9LhybpbodeeUUTMl/KEu309jb8Ed3BIwPLMu+wbLCZpoYKJQtb7rkcosj80Cr7EDvYQ8uQKF5qQ==
+  version "3.4.10"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.4.10.tgz#4754e1ceb771a37dff65327f834e125b83e1291e"
+  integrity sha512-SAl+0oq6GxrgF+YVn9NV5ZbVK5vDyFCL4bCEPIhx61jYIH/npP/MFTBm0RO8Agf2it8iZTE0QtzOoOzuxk8tRA==
 
 convert-source-map@^1.4.0, convert-source-map@^1.6.0, convert-source-map@^1.7.0:
   version "1.8.0"
@@ -5735,10 +5735,10 @@ tr46@^2.1.0:
   dependencies:
     punycode "^2.1.1"
 
-ts-jest@^27.1.4:
-  version "27.1.4"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-27.1.4.tgz#84d42cf0f4e7157a52e7c64b1492c46330943e00"
-  integrity sha512-qjkZlVPWVctAezwsOD1OPzbZ+k7zA5z3oxII4dGdZo5ggX/PL7kvwTM0pXTr10fAtbiVpJaL3bWd502zAhpgSQ==
+ts-jest@^27.1.5:
+  version "27.1.5"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-27.1.5.tgz#0ddf1b163fbaae3d5b7504a1e65c914a95cff297"
+  integrity sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==
   dependencies:
     bs-logger "0.x"
     fast-json-stable-stringify "2.x"
