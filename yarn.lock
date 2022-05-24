@@ -2172,9 +2172,9 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^3.3.69:
-  version "3.4.14"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.4.14.tgz#e9073e01ea010e0cd2867515819020f641daa904"
-  integrity sha512-NWiGa+v0KlVuRIObuVjaMChZUhAzVUmdSJk5HMDuB4g77wsMYgnD0GzMjzQODFtAH1GPI372P/HU1JrwYT1HNw==
+  version "3.4.15"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.4.15.tgz#2905b36d013ee42e1fd1cb79ca379891be757fb4"
+  integrity sha512-wqGCpliPCBdLREKz/CEeRkpEUTMq75fTjX6MEhXOdDi454uK4WDwd8qcxOPCoiZv8ityf5T0of4NHKLdbgiigg==
 
 convert-source-map@^1.4.0, convert-source-map@^1.6.0, convert-source-map@^1.7.0:
   version "1.8.0"
@@ -2357,9 +2357,9 @@ diff@^4.0.1:
   integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
 
 diff@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-5.0.0.tgz#7ed6ad76d859d030787ec35855f5b1daf31d852b"
-  integrity sha512-/VTCrvm5Z0JGty/BWHljh+BAiw3IK+2j87NGMu8Nwc/f48WoDAC395uomO9ZD117ZOBaHmkX1oyLvkVM/aIT3w==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-5.1.0.tgz#bc52d298c5ea8df9194800224445ed43ffc87e40"
+  integrity sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==
 
 dir-glob@^3.0.1:
   version "3.0.1"
