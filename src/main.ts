@@ -13,6 +13,7 @@ export class Demo extends cdk.Construct {
     new kc.KeyCloak(this, 'KeyCloak', {
       auroraServerless: true,
       certificateArn,
+      keycloakVersion: kc.KeycloakVersion.of('15.0.2'),
     });
   }
 }
