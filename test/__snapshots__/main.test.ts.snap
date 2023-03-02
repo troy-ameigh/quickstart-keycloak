@@ -6,10 +6,10 @@ Object {
   "Mappings": Object {
     "DemoKeyCloakKeyCloakContainerSerivceKeycloakImageMap80969273": Object {
       "aws": Object {
-        "uri": "jboss/keycloak:12.0.4",
+        "uri": "jboss/keycloak:15.0.2",
       },
       "aws-cn": Object {
-        "uri": "048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/jboss/keycloak:12.0.4",
+        "uri": "048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/jboss/keycloak:15.0.2",
       },
     },
   },
@@ -51,7 +51,7 @@ Object {
   },
   "Resources": Object {
     "DemoKeyCloakDatabaseAuroraServerlessClusterF717CC02": Object {
-      "DeletionPolicy": "Delete",
+      "DeletionPolicy": "Retain",
       "Properties": Object {
         "BackupRetentionPeriod": 7,
         "DBClusterParameterGroupName": "default.aurora-mysql5.7",
@@ -59,6 +59,7 @@ Object {
           "Ref": "DemoKeyCloakDatabaseAuroraServerlessClusterSubnetsB194D566",
         },
         "DatabaseName": "keycloak",
+        "DeletionProtection": true,
         "Engine": "aurora-mysql",
         "EngineMode": "serverless",
         "MasterUserPassword": Object {
@@ -85,7 +86,7 @@ Object {
         ],
       },
       "Type": "AWS::RDS::DBCluster",
-      "UpdateReplacePolicy": "Delete",
+      "UpdateReplacePolicy": "Retain",
     },
     "DemoKeyCloakDatabaseAuroraServerlessClusterSecretAttachment74515EDB": Object {
       "Properties": Object {
@@ -196,6 +197,7 @@ Object {
       "Type": "AWS::EC2::SecurityGroupIngress",
     },
     "DemoKeyCloakDatabaseAuroraServerlessClusterSubnetsB194D566": Object {
+      "DeletionPolicy": "Retain",
       "Properties": Object {
         "DBSubnetGroupDescription": "Subnets for AuroraServerlessCluster database",
         "SubnetIds": Array [
@@ -208,8 +210,10 @@ Object {
         ],
       },
       "Type": "AWS::RDS::DBSubnetGroup",
+      "UpdateReplacePolicy": "Retain",
     },
     "DemoKeyCloakKCSecretEBDE6CA7": Object {
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "GenerateSecretString": Object {
           "ExcludePunctuation": true,
@@ -219,6 +223,7 @@ Object {
         },
       },
       "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
     },
     "DemoKeyCloakKeyCloakContainerSerivceALB8B253870": Object {
       "DependsOn": Array [
@@ -278,6 +283,7 @@ Object {
     },
     "DemoKeyCloakKeyCloakContainerSerivceALBHttpsListenerECSTargetGroupFF9C7FFB": Object {
       "Properties": Object {
+        "HealthyThresholdCount": 3,
         "Port": 8443,
         "Protocol": "HTTPS",
         "TargetGroupAttributes": Array [
@@ -345,15 +351,24 @@ Object {
       "Type": "AWS::EC2::SecurityGroupEgress",
     },
     "DemoKeyCloakKeyCloakContainerSerivceCluster7C35B187": Object {
+      "DependsOn": Array [
+        "DemoKeyCloakDatabaseAuroraServerlessClusterF717CC02",
+        "DemoKeyCloakDatabaseAuroraServerlessClusterSecretAttachment74515EDB",
+        "testDemoKeyCloakDatabaseAuroraServerlessClusterSecret91FAEA573fdaad7efa858a3daf9490cf0a702aeb",
+        "DemoKeyCloakDatabaseAuroraServerlessClusterSecurityGroupfromtestDemoKeyCloakDatabaseAuroraServerlessClusterSecurityGroupFB010207330660F7E02C",
+        "DemoKeyCloakDatabaseAuroraServerlessClusterSecurityGroupfromtestDemoKeyCloakKeyCloakContainerSerivceServiceSecurityGroupF012F9C1IndirectPort28A7A752",
+        "DemoKeyCloakDatabaseAuroraServerlessClusterSecurityGroupD80FC7B4",
+        "DemoKeyCloakDatabaseAuroraServerlessClusterSubnetsB194D566",
+      ],
       "Type": "AWS::ECS::Cluster",
     },
     "DemoKeyCloakKeyCloakContainerSerivceLogGroup6C0FBE58": Object {
-      "DeletionPolicy": "Delete",
+      "DeletionPolicy": "Retain",
       "Properties": Object {
         "RetentionInDays": 30,
       },
       "Type": "AWS::Logs::LogGroup",
-      "UpdateReplacePolicy": "Delete",
+      "UpdateReplacePolicy": "Retain",
     },
     "DemoKeyCloakKeyCloakContainerSerivceService39E87951": Object {
       "DependsOn": Array [
@@ -560,6 +575,10 @@ Object {
                 "Value": "mysql",
               },
               Object {
+                "Name": "PROXY_ADDRESS_FORWARDING",
+                "Value": "true",
+              },
+              Object {
                 "Name": "JDBC_PARAMS",
                 "Value": "useSSL=false",
               },
@@ -667,7 +686,7 @@ Object {
           ],
         },
         "Family": "testDemoKeyCloakKeyCloakContainerSerivceTaskDefBB8AB6F5",
-        "Memory": "30720",
+        "Memory": "8192",
         "NetworkMode": "awsvpc",
         "RequiresCompatibilities": Array [
           "FARGATE",
@@ -755,10 +774,14 @@ Object {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
               "Principal": Object {
-                "Service": Array [
-                  "ecs.amazonaws.com",
-                  "ecs-tasks.amazonaws.com",
-                ],
+                "Service": "ecs.amazonaws.com",
+              },
+            },
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "ecs-tasks.amazonaws.com",
               },
             },
           ],
@@ -1133,6 +1156,7 @@ Object {
       "Type": "AWS::EC2::VPCGatewayAttachment",
     },
     "testDemoKeyCloakDatabaseAuroraServerlessClusterSecret91FAEA573fdaad7efa858a3daf9490cf0a702aeb": Object {
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "Description": Object {
           "Fn::Join": Array [
@@ -1153,6 +1177,7 @@ Object {
         },
       },
       "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
     },
   },
 }
